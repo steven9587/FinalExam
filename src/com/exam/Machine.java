@@ -40,6 +40,8 @@ public class Machine {
 	}
 
 	public void on() {
+		int total = 0;
+		int heatjudgement = 0;
 		int z = -1;
 		while (z != 0) {
 			for (Menu m : menus) {
@@ -50,60 +52,76 @@ public class Machine {
 			Scanner scanner = new Scanner(System.in);
 			System.out.print("請輸入餐點:");
 			int order = scanner.nextInt();
-			orders.add(order);
+			if (order > 0) {
+				orders.add(order);
+			}
 			System.out.print("請輸入數量:");
 			int number = scanner.nextInt();
 			numbers.add(number);
 			switch (order) {
 			case 1:
 				for (int i = 0; i < orders.size(); i++) {
-					System.out.println(
-							"目前餐點：" + (i+1) + "." + menus.get(orders.get(i) - 1).getName() + " " + numbers.get(i) + "份");
+					System.out.println("目前餐點：" + (i + 1) + "." + menus.get(orders.get(i) - 1).getName() + " "
+							+ numbers.get(i) + "份");
 				}
 				System.out.println("==========");
 				break;
 			case 2:
 				for (int i = 0; i < orders.size(); i++) {
-					System.out.println(
-							"目前餐點：" + (i+1) + "." + menus.get(orders.get(i) - 1).getName() + " " + numbers.get(i) + "份");
+					System.out.println("目前餐點：" + (i + 1) + "." + menus.get(orders.get(i) - 1).getName() + " "
+							+ numbers.get(i) + "份");
 				}
 				System.out.println("==========");
 				break;
 			case 3:
 				for (int i = 0; i < orders.size(); i++) {
-					System.out.println(
-							"目前餐點：" + (i+1) + "." + menus.get(orders.get(i) - 1).getName() + " " + numbers.get(i) + "份");
+					System.out.println("目前餐點：" + (i + 1) + "." + menus.get(orders.get(i) - 1).getName() + " "
+							+ numbers.get(i) + "份");
 				}
 				System.out.println("==========");
 				break;
 			case 4:
 				for (int i = 0; i < orders.size(); i++) {
-					System.out.println(
-							"目前餐點：" + (i+1) + "." + menus.get(orders.get(i) - 1).getName() + " " + numbers.get(i) + "份");
+					System.out.println("目前餐點：" + (i + 1) + "." + menus.get(orders.get(i) - 1).getName() + " "
+							+ numbers.get(i) + "份");
 				}
 				System.out.println("==========");
 				break;
 			case 5:
 				for (int i = 0; i < orders.size(); i++) {
-					System.out.println(
-							"目前餐點：" + (i+1) + "." + menus.get(orders.get(i) - 1).getName() + " " + numbers.get(i) + "份");
+					System.out.println("目前餐點：" + (i + 1) + "." + menus.get(orders.get(i) - 1).getName() + " "
+							+ numbers.get(i) + "份");
 				}
 				System.out.println("==========");
 				break;
 			case 6:
 				for (int i = 0; i < orders.size(); i++) {
-					System.out.println(
-							"目前餐點：" + (i+1) + "." + menus.get(orders.get(i) - 1).getName() + " " + numbers.get(i) + "份");
+					System.out.println("目前餐點：" + (i + 1) + "." + menus.get(orders.get(i) - 1).getName() + " "
+							+ numbers.get(i) + "份");
 				}
 				System.out.println("==========");
 				break;
 			case 7:
 				for (int i = 0; i < orders.size(); i++) {
-					System.out.println(
-							"目前餐點：" + (i+1) + "." + menus.get(orders.get(i) - 1).getName() + " " + numbers.get(i) + "份");
+					System.out.println("目前餐點：" + (i + 1) + "." + menus.get(orders.get(i) - 1).getName() + " "
+							+ numbers.get(i) + "份");
 				}
 				System.out.println("==========");
 				break;
+			case 0:
+				for (int i = 0; i < orders.size(); i++) {
+					System.out.println("目前餐點：" + (i + 1) + "." + menus.get(orders.get(i) - 1).getName() + " "
+							+ numbers.get(i) + "份");
+					total = menus.get(orders.get(i) - 1).getPrice() * numbers.get(i);
+					heatjudgement = menus.get(orders.get(i) - 1).getHeat() * numbers.get(i);
+				}
+				System.out.println("合計:" + total);
+				if (heatjudgement >= 1200) {
+					System.out.println("高熱量餐點");
+				}
+				System.out.println("==========");
+				break;
+
 			}
 		}
 	}
