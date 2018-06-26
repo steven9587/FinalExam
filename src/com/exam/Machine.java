@@ -51,8 +51,8 @@ public class Machine {
 			System.out.println("q" + " " + "離開");
 			Scanner scanner = new Scanner(System.in);
 			System.out.print("請輸入餐點:");
-			int order = scanner.nextInt();
-			if (order > 0) {
+			int order = scanner.nextInt();	
+			if (order != 0) {
 				orders.add(order);
 			}
 			System.out.print("請輸入數量:");
@@ -109,6 +109,7 @@ public class Machine {
 				System.out.println("==========");
 				break;
 			case 0:
+				z=0;
 				for (int i = 0; i < orders.size(); i++) {
 					System.out.println("目前餐點：" + (i + 1) + "." + menus.get(orders.get(i) - 1).getName() + " "
 							+ numbers.get(i) + "份");
@@ -121,7 +122,6 @@ public class Machine {
 				}
 				System.out.println("==========");
 				break;
-
 			}
 		}
 	}
